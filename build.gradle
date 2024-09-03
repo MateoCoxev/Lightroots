@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.5-SNAPSHOT'
+	id 'fabric-loom' version '1.7-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -15,6 +15,13 @@ repositories {
 		url "https://cursemaven.com"
 	}
 	maven { url 'https://maven.wispforest.io' }
+	maven {
+		name = "Modrinth"
+		url = "https://api.modrinth.com/maven"
+		content {
+			includeGroup "maven.modrinth"
+		}
+	}
 }
 
 fabricApi {
@@ -33,6 +40,8 @@ dependencies {
 	modImplementation "curse.maven:fabric-waystones-410902:4950461"
 
 	annotationProcessor modImplementation("io.wispforest:owo-lib:${project.owo_version}")
+	modImplementation "curse.maven:corgilib-693313:5643190"
+	modImplementation "maven.modrinth:ewc:2.1.0-b3"
 }
 
 processResources {

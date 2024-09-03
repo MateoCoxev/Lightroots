@@ -4,8 +4,6 @@ import net.coxev.lightroots.datagen.ModModelProvider;
 import net.coxev.lightroots.datagen.ModWorldGenerator;
 import net.coxev.lightroots.world.ModConfiguredFeatures;
 import net.coxev.lightroots.world.ModPlacedFeatures;
-import net.coxev.lightroots.world.ModStructurePools;
-import net.coxev.lightroots.world.ModStructures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
@@ -23,7 +21,5 @@ public class LightrootsDataGenerator implements DataGeneratorEntrypoint {
 	public void buildRegistry(RegistryBuilder registryBuilder) {
 		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::boostrap);
 		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::boostrap);
-		registryBuilder.addRegistry(RegistryKeys.STRUCTURE, ModStructures::boostrap);
-		registryBuilder.addRegistry(RegistryKeys.TEMPLATE_POOL, ModStructurePools::boostrap);
 	}
 }

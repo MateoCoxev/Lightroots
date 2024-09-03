@@ -13,7 +13,7 @@ public class ModFeatures<FC extends FeatureConfig> {
     public static final Feature<LightrootFeatureConfig> LIGHTROOT = registerFeature("lightroot", new LightrootFeature(LightrootFeatureConfig.CODEC));
 
     private static <C extends FeatureConfig, F extends Feature<C>> F registerFeature(String name, F feature){
-        return Registry.register(Registries.FEATURE, new Identifier(Lightroots.MOD_ID, name), feature);
+        return Registry.register(Registries.FEATURE, Identifier.of(Lightroots.MOD_ID, name), feature);
     }
 
     public static void registerModFeatures(){

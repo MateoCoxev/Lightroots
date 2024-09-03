@@ -2,7 +2,7 @@ package net.coxev.lightroots;
 
 import net.coxev.lightroots.block.entity.ModBlockEntities;
 import net.coxev.lightroots.block.ModBlocks;
-import net.coxev.lightroots.world.ModFeatures;
+import net.coxev.lightroots.world.*;
 import net.coxev.lightroots.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
@@ -16,9 +16,10 @@ public class Lightroots implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModBlocks.registerModBlocks();
-		ModBlockEntities.registerModBlockEntities();
-		ModFeatures.registerModFeatures();
 
+		ModBlockEntities.registerModBlockEntities();
+
+		ModFeatures.registerModFeatures();
 		ModWorldGeneration.generateModWorldGen();
 	}
 }

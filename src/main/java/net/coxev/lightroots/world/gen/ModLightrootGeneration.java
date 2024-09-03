@@ -7,6 +7,6 @@ import net.minecraft.world.gen.GenerationStep;
 
 public class ModLightrootGeneration {
     public static void generateLightroots(){
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_DECORATION, ModPlacedFeatures.LIGHTROOT_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_DECORATION, ModPlacedFeatures.LIGHTROOT);
     }
 }

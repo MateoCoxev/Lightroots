@@ -14,11 +14,16 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> LIGHTROOT = registerKey("lightroot");
 
     public static void boostrap(Registerable<ConfiguredFeature<?, ?>> context) {
-        register(context, LIGHTROOT, ModFeatures.LIGHTROOT, new LightrootFeatureConfig(30));
+        register(
+                context,
+                LIGHTROOT,
+                ModFeatures.LIGHTROOT,
+                new LightrootFeatureConfig(30)
+        );
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
-        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(Lightroots.MOD_ID, name));
+        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Identifier.of(Lightroots.MOD_ID, name));
     }
 
     private static <FC extends FeatureConfig, F extends Feature<FC>> void register(Registerable<ConfiguredFeature<?, ?>> context,
